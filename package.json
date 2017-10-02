@@ -1,0 +1,23 @@
+{
+  "name": "rct-form",
+  "version": "0.1.0",
+  "description": "simply create form with redux-form",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linehat/rct-form.git"
+  },
+  "keywords": [
+    "redux-form",
+    "react"
+  ],
+  "author": "GitNiko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linehat/rct-form/issues"
+  },
+  "homepage": "https://github.com/linehat/rct-form#readme"
+}
