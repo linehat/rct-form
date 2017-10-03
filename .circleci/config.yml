@@ -6,4 +6,6 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
+    branches:
+      - only: release
 
