@@ -45,13 +45,21 @@
     "jest": "^20.0.4",
     "lint-staged": "^4.0.0",
     "prettier": "^1.4.4",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-hot-loader": "next",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-form": "^7.0.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },
   "peerDependencies": {
-    "react": "^15.6.1"
+    "react": "^15.6.1",
+    "redux": "^3.7.2",
+    "react-redux": "^5.0.6",
+    "prop-types": "^15.6.0",    
+    "redux-form": "^7.0.4"
   }
 }
