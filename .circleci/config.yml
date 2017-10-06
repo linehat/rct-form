@@ -8,4 +8,11 @@ jobs:
       - run: echo "hello world"
     branches:
       - only: release
-
+  deployment:
+    npm:
+      tag: /v[0-9]+(\.[0-9]+)*/
+          commands:
+        - npm publish
+dependencies:
+  pre:
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
