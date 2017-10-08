@@ -21,7 +21,9 @@
     // es7 装饰器
     "transform-decorators-legacy",
     // Enables React code to work with HMR.
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    "babel-plugin-transform-class-properties",
+    "transform-object-rest-spread"
   ],
   // https://facebook.github.io/jest/docs/webpack.html#using-with-webpack-2
   "env": {
