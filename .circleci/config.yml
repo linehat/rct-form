@@ -6,13 +6,24 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
-    branches:
-      - only: release
-  deployment:
+      - run:
+        name: update-npm
+        command: 'sudo npm install -g yarn'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
     npm:
       tag: /v[0-9]+(\.[0-9]+)*/
           commands:
         - npm publish
+    branches:
+      - only: release
 dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
