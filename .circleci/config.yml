@@ -17,5 +17,4 @@ jobs:
             - ./node_modules
       - run: npm run build
       - run: npm publish
-    filters:
-      tags: true
+      - tag: /v[0-9]+(\.[0-9]+)*/
