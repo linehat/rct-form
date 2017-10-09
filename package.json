@@ -1,6 +1,6 @@
 {
   "name": "rct-form",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "simply create form with redux-form",
   "main": "dist/index.js",
   "scripts": {
