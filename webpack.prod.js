@@ -6,10 +6,17 @@ const reactExternal = {
   commonjs: "react",
   amd: "react"
 };
+const reduxFormExternal = {
+  root: "Redux-Form",
+  commonjs2: "redux-form",
+  commonjs: "redux-form",
+  amd: "redux-form"
+};
 module.exports = {
   entry: ["./src/index.js"],
   externals: {
-    react: reactExternal
+    react: reactExternal,
+    "redux-form": reduxFormExternal
   },
   output: {
     filename: "index.js",
