@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:6.10
+      - image: circleci/node:6.
     steps:
       - checkout
       - run: echo "hello world"
@@ -17,4 +17,6 @@ jobs:
             - ./node_modules
       - run: npm run build
       - run: npm publish
-      - tag: /v[0-9]+(\.[0-9]+)*/
+    branches:
+      only:
+        - release
