@@ -17,5 +17,5 @@ jobs:
             - ./node_modules
       - run: npm run build
       - run: npm publish
-    branches:
-      - only: release
+    filters:
+      tags: true
