@@ -20,6 +20,8 @@ module.exports = {
   },
   output: {
     filename: "index.js",
+    library: "rct-form",
+    libraryTarget: "umd",
     path: __dirname + "/dist"
   },
   resolve: {
