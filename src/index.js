@@ -3,17 +3,14 @@ import { reduxForm, Field } from "redux-form";
 
 const fields = {};
 const setField = (type, component) => (fields[type] = component);
+/**
+ * 
+ * @param {string} type 
+ * @return {React.Component}
+ */
 const getField = type => fields[type];
-const fieldRender = field => {
-  const CMP = getField(field.fieldType);
-  if (CMP) {
-    return <CMP {...field} key={field.name} />;
-  } else {
-    return null;
-  }
-};
 
-export const fieldHOC = type => InnerComponent => {
+export const rctField = type => InnerComponent => {
   class InnerWrapper extends React.Component {
     render() {
       return <Field {...this.props} component={InnerComponent} />;
@@ -23,7 +20,7 @@ export const fieldHOC = type => InnerComponent => {
   return InnerWrapper;
 };
 
-export const RCTForm = ReactComponent =>
+export const rctForm = ReactComponent =>
   class Wrapper extends React.Component {
     constructor(props) {
       super(props);
@@ -40,7 +37,7 @@ export const RCTForm = ReactComponent =>
         console.warn("formName is invalid, formProp:", formProp);
         return null;
       }
-      const newProps = { fieldRender, ...this.props };
+      const newProps = { getField, ...this.props };
       return this.temp(newProps);
     }
   };
