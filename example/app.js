@@ -41,7 +41,7 @@ const formDSL = {
                 {
                   fieldName: "user.username",
                   type: "regular",
-                  value: 1
+                  value: "admin"
                 }
               ]
             }
