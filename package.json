@@ -53,7 +53,7 @@
     "react-dom": "^15.6.1",
     "react-hot-loader": "next",
     "react-redux": "^5.0.6",
-    "react-test-renderer": "^16.0.0",
+    "react-test-renderer": "^15.6.1",
     "redux": "^3.7.2",
     "redux-form": "^7.0.4",
     "webpack": "^3.6.0",
