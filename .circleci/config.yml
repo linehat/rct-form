@@ -15,6 +15,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+      - run: npm run test
       - run: npm run build
       - run: npm publish
     branches:
