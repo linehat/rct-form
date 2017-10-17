@@ -4,7 +4,8 @@
   "description": "simply create form with redux-form",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest && codecov",
+    "test": "jest --coverage",
+    "covTest": "jest && codecov",
     "retest": "jest --updateSnapshot",
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack --profile --colors --display-modules --config webpack.prod.js",
