@@ -1,10 +1,11 @@
 {
   "name": "rct-form",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "simply create form with redux-form",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest && codecov",
+    "local.test": "jest --coverage",
     "retest": "jest --updateSnapshot",
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack --profile --colors --display-modules --config webpack.prod.js",
@@ -53,6 +54,7 @@
     "react-dom": "^15.6.1",
     "react-hot-loader": "next",
     "react-redux": "^5.0.6",
+    "react-test-renderer": "^15.6.1",
     "redux": "^3.7.2",
     "redux-form": "^7.0.4",
     "webpack": "^3.6.0",
