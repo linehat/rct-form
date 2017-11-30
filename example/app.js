@@ -158,7 +158,7 @@ class MyForm extends React.Component {
         })}
       </div>
     ));
-    return <div>{cmps}</div>;
+    return cmps;
   }
 }
 

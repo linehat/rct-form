@@ -1,6 +1,6 @@
 {
   "name": "rct-form",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "simply create form with redux-form",
   "main": "dist/index.js",
   "scripts": {
@@ -50,8 +50,8 @@
     "lint-staged": "^4.0.0",
     "prettier": "^1.4.4",
     "prop-types": "^15.6.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-hot-loader": "next",
     "react-redux": "^5.0.6",
     "react-test-renderer": "^15.6.1",
@@ -62,7 +62,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-form": "^7.0.4"
