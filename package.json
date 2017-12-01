@@ -1,6 +1,6 @@
 {
   "name": "rct-form",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "simply create form with redux-form",
   "main": "dist/index.js",
   "scripts": {
@@ -62,7 +62,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": "^16.0.0 || ^15.6.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-form": "^7.0.4"
