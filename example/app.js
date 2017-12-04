@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { formValueSelector } from "redux-form";
-import { rctForm, rctField } from "../src/";
+import { rctForm, rctField, rctFields } from "../src/";
 
 const formDSL = {
   formName: "creditAdd",
@@ -46,11 +46,41 @@ const formDSL = {
               ]
             }
           ]
+        },
+        {
+          fieldType: "bank",
+          names: ["bankName", "bankCode"]
         }
       ]
     }
   ]
 };
+
+@rctFields("bank")
+class MultiValueField extends React.Component {
+  render() {
+    console.log(this.props);
+    const bankNameField = this.props["bankName"];
+    const bankCodeField = this.props["bankCode"];
+    // 常见的银行组件可能是选择框之类的，这里用input简单代表下
+    return [
+      <div key={1}>
+        bankName:
+        <input
+          value={bankNameField.input.value ? bankNameField.input.value : ""}
+          onChange={bankNameField.input.onChange}
+        />
+      </div>,
+      <div key={2}>
+        bankCode:
+        <input
+          value={bankCodeField.input.value ? bankCodeField.input.value : ""}
+          onChange={bankCodeField.input.onChange}
+        />
+      </div>
+    ];
+  }
+}
 
 @rctField("inputItem")
 class InputItemField extends React.Component {
@@ -144,11 +174,11 @@ class MyForm extends React.Component {
     // DSL resolve
     const cmps = formProp.sections.map((section, index) => (
       <div key={index}>
-        {section.fields.map(field => {
+        {section.fields.map((field, index) => {
           const CMP = getField(field.fieldType);
           if (CMP) {
             if (this.isNeed(formProp.formName, field)) {
-              return <CMP {...field} key={field.name} />;
+              return <CMP {...field} key={index} />;
             } else {
               return null;
             }

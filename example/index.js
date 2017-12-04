@@ -34,7 +34,6 @@ render(App);
 
 // 模块热替换的 API
 if (module.hot) {
-  console.log("fkasjdlajsdask");
   module.hot.accept("./app", () => {
     render(App);
   });
