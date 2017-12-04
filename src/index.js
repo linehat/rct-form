@@ -1,11 +1,11 @@
 import React from "react";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, Fields } from "redux-form";
 
 const fields = {};
 const setField = (type, component) => (fields[type] = component);
 /**
- * 
- * @param {string} type 
+ *
+ * @param {string} type
  * @return {React.Component}
  */
 const getField = type => fields[type];
@@ -20,15 +20,28 @@ export const rctField = type => InnerComponent => {
   return InnerWrapper;
 };
 
+export const rctFields = type => InnerComponent => {
+  class InnerWrapper extends React.Component {
+    render() {
+      return <Fields {...this.props} component={InnerComponent} />;
+    }
+  }
+  setField(type, InnerWrapper);
+  return InnerWrapper;
+};
+
 export const rctForm = ReactComponent =>
   class Wrapper extends React.Component {
     constructor(props) {
       super(props);
       const { formProp, validate } = props;
-      const FormComponent = reduxForm({ form: formProp.formName, validate })(
+      this.FormComponent = reduxForm({ form: formProp.formName, validate })(
         ReactComponent
       );
-      this.temp = p => <FormComponent {...p} />;
+    }
+
+    getForm(props, Component) {
+      return <Component {...props} />;
     }
 
     render() {
@@ -38,6 +51,6 @@ export const rctForm = ReactComponent =>
         return null;
       }
       const newProps = { getField, ...this.props };
-      return this.temp(newProps);
+      return this.getForm(newProps, this.FormComponent);
     }
   };
