@@ -1,4 +1,4 @@
-[![CircleCI](https://img.shields.io/circleci/project/linehat/rct-form/release.svg)](https://circleci.com/gh/linehat/rct-form/tree/release)
+[![CircleCI](https://img.shields.io/circleci/project/github/linehat/rct-form.svg)](https://circleci.com/gh/linehat/rct-form/tree/release)
 [![npm](https://img.shields.io/npm/v/rct-form.svg)](https://www.npmjs.com/package/rct-form)
 [![npm](https://img.shields.io/npm/dm/rct-form.svg)](https://www.npmjs.com/package/rct-form)
 
